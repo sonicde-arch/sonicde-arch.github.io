@@ -18,7 +18,7 @@ jobs:
       - name: Download latest releases
         env:
           GH_TOKEN: ${{ github.token }}
-        run: >
+        run: |
           gh --version
           gh release --help
           gh repo list --limit 9999 --no-archived --source --topic package \
