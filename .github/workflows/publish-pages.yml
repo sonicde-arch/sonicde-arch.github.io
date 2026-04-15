@@ -25,7 +25,7 @@ jobs:
           cat package-repos.json | jq -r '.[] | .name' > package-repos.txt
           tail -n-1 package-repos.txt
           while IFS= read -r repo; do
-             gh release download --repo "$GITHUB_REPOSITORY_OWNER/$repo"
+             gh release download --repo "$GITHUB_REPOSITORY_OWNER/$repo" --pattern '*.pkg.*'
           done < package-repos.txt
           ls -l
       
