@@ -19,16 +19,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download --help
           gh repo list --limit 9999 --no-archived --source --topic package \
               --json name "$GITHUB_REPOSITORY_OWNER" > package-repos.json
           cat package-repos.json | jq -r '.[] | .name' > package-repos.txt
-          tail -n-1 package-repos.txt
           while IFS= read -r repo; do
              gh release download --repo "$GITHUB_REPOSITORY_OWNER/$repo" --pattern '*.pkg.*'
           done < package-repos.txt
           rm -f package-repos.*
-          ls -l
 
       - name: Create repo
         uses: callmetango/archlinux-make-repo-action@HEAD
