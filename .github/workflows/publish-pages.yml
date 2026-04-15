@@ -27,8 +27,14 @@ jobs:
           while IFS= read -r repo; do
              gh release download --repo "$GITHUB_REPOSITORY_OWNER/$repo" --pattern '*.pkg.*'
           done < package-repos.txt
+          rm -f package-repos.*
           ls -l
-      
+
+      - name: Create repo
+        uses: callmetango/archlinux-make-repo-action@HEAD
+        with:
+          reponame: sonicde
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build
