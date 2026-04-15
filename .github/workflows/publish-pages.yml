@@ -19,8 +19,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh --version
-          gh release --help
+          gh release download --help
           gh repo list --limit 9999 --no-archived --source --topic package \
               --json name "$GITHUB_REPOSITORY_OWNER" > package-repos.json
           cat package-repos.json | jq -r '.[] | .name' > package-repos.txt
