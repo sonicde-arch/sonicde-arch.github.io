@@ -29,7 +29,7 @@ jobs:
           while IFS= read -r repo; do
             # FIXME continue if the repo has no releases
             gh release download --repo "$GITHUB_REPOSITORY_OWNER/$repo" \
-                --pattern "-$ARCH.pkg.*" --pattern '-any.pkg.*' --dir "$ARCH"
+                --pattern "*-$ARCH.pkg.*" --pattern '*-any.pkg.*' --dir "$ARCH"
           done < package-repos.txt
           rm -f package-repos.*
 
