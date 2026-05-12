@@ -9,7 +9,7 @@ permissions:
   id-token: write
 
 env:
-  ARCH: x86…64 # TODO make configurable
+  ARCH: x86_64 # TODO make configurable
 
 jobs:
   build:
