@@ -40,6 +40,11 @@ jobs:
         with:
           reponame: sonicde
           path: ${{ env.ARCH }}
+
+      - name: Generate directory index
+        uses: gacts/directory-listing@v1
+        with:
+          target: ${{ env.ARCH }}
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
