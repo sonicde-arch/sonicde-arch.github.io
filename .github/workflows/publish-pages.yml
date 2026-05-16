@@ -15,10 +15,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout content repository
+        uses: actions/checkout@v6
         with:
-          path: .
+          repository: ${{ vars.WEBSITE_CONTENT_REPO }}
+          path: _content
+          
+      - name: Checkout template repository
+        uses: actions/checkout@v6
+        with:
+          path: _templates
+
+      - name: Merge content and templates
+        run: |
+          rm -rf _content/.git* _templates/.git*
+          mv -f _templates/* _content/* ./
+          rmdir _content _templates
 
       - name: Download latest releases
         env:
