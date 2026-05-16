@@ -13,8 +13,8 @@ First, please download the public OpenPGP signing key [`sonicde-archlinux.asc`](
 ```shell
 curl -O https://sonicde-arch.github.io/sonicde-archlinux.asc
 sudo pacman-key --add sonicde-archlinux.asc
-sudo pacman-key --finger FIXME
-sudo pacman-key --lsign-key FIXME
+sudo pacman-key --finger 3B87898C73F11DF5
+sudo pacman-key --lsign-key 3B87898C73F11DF5
 ```
 You can read more package signing on the [pacman/Package signing - ArchWiki](https://wiki.archlinux.org/title/Pacman/Package_signing#Adding_unofficial_keys) page.
 
