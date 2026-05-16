@@ -23,7 +23,7 @@ You can read more package signing on the [pacman/Package signing - ArchWiki](htt
 Once you added the public key, also add an entry for the SonicDE repository to the end of the file `/etc/pacman.conf`:
 
 ```ini
-[sonide]
+[sonicde]
 Server = https://sonicde-arch.github.io/x86_64
 ```
 
