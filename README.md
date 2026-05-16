@@ -30,7 +30,7 @@ Server = https://sonicde-arch.github.io/x86_64
 Run `pacman` to fetch the newly added SonicDE package index:
 
 ```shell
-pacman -Syyu
+sudo pacman -Syyu
 ```
 
 ### Installing SonicDE
@@ -38,10 +38,18 @@ pacman -Syyu
 Installing SonicDE is as easy as installing the `sonicde-meta` package:
 
 ```shell
-pacman -S sonicde-meta
+sudo pacman -S sonicde-meta
 ```
 
 The included packages will replace any of their installed KDE counterparts. To make use of SonicDE, just log out of your desktop session and log in again.
+
+In case you get kicked out of a running KDE session while you're installing SonicDE, just re-run `pacman` after you logged in again and let it install the missing packages:
+
+```shell
+sudo pacman -S sonicde-meta
+```
+
+When done, start `System Settings` and verify that you're running SonicDE on the "About" page. You do? Congratulations!
 
 ## Getting in Contact
 
