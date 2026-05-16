@@ -30,7 +30,7 @@ Server = https://sonicde-arch.github.io/x86_64
 Run `pacman` to fetch the newly added SonicDE package index:
 
 ```shell
-pacman -Sy
+pacman -Syyu
 ```
 
 ### Installing SonicDE
