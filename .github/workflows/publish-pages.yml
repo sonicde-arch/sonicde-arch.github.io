@@ -29,7 +29,8 @@ jobs:
       - name: Merge content and templates
         run: |
           rm -rf _content/.git* _templates/.git*
-          mv -f _templates/* _content/* ./
+          mv -f _templates/* ./
+          mv -f _content/* ./
           rmdir _content _templates
 
       - name: Download latest releases
