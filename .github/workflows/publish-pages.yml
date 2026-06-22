@@ -13,7 +13,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout content repository
         uses: actions/checkout@v6
@@ -67,7 +67,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
