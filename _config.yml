@@ -1,5 +1,14 @@
 remote_theme: "jekyll/minima@bf9ef98"
 title: SonicDE for Arch Linux
+description: SonicDE source and binary packages for Arch Linux
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: img/default-card.png
+      logo: img/logo.svg
+
+# Theme
 minima:
   hide_site_feed_link: true
