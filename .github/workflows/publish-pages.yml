@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-FileCopyrightText: 2026 callmetango for SonicDE.org
+
 name: Build Jekyll site
 on:
   - push
@@ -31,7 +34,7 @@ jobs:
           rm -rf _content/.git* _templates/.git*
           mv -f _templates/* ./
           mv -f _content/* ./
-          rmdir _content _templates
+          rm -rf _content _templates
 
       - name: Download latest releases
         env:
